@@ -19,7 +19,7 @@ public class ProductRepository {
         products.put("6", new Product("6", "Blaubeere"));
         products.put("7", new Product("7", "Erdbeere"));
         products.put("8", new Product("8", "Kaki"));
-        products.put("9", new Product("9", "Lytchi"));
+        products.put("9", new Product("9", "Lychee"));
     }
 
     public ProductRepository(Map<String, Product> products) {

@@ -13,7 +13,7 @@ public class OrderRepository {
         orders.put("1", new Order("1", List.of(new Product("1", "Apple"), new Product("2", "Banana"))));
         orders.put("2", new Order("2", List.of(new Product("3", "Dattel"), new Product("4", "Papaya"))));
         orders.put("3", new Order("3", List.of(new Product("5", "Himbeere"), new Product("6", "Blaubeere"))));
-        orders.put("4", new Order("4", List.of(new Product("7", "Erdbeere"), new Product("8", "Kaki"),new Product("9","Lythci"))));
+        orders.put("4", new Order("4", List.of(new Product("7", "Erdbeere"), new Product("8", "Kaki"),new Product("9","Lychee"))));
     }
 
     public OrderRepository(Map<String, Order> orders) {

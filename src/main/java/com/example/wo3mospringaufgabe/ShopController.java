@@ -8,22 +8,22 @@ import java.util.List;
 public class ShopController {
 ShopService shopService= new ShopService();
 
-    @GetMapping("/products")
+    @GetMapping("/products")                //localhost:8080/api/products
     public List<Product> getProducts() {
         return shopService.listProducts();
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/products/{id}")           //localhost:8080/api/products/2  (Letze Zahl ist Produkt Nummer (
     public Product getProducts(@PathVariable String id) {
         return shopService.getProduct(id);
     }
 
-    @GetMapping("/orders")
+    @GetMapping("/orders")              //localhost:8080/api/orders
     public List<Order> getOrders() {
         return shopService.listOrders();
     }
-// http:localhost:8080/api/orders/
-    @GetMapping("/orders/{id}")
+
+    @GetMapping("/orders/{id}")         //localhost:8080/api/orders/3 (Letzte Zahl ist die Order Nummer)
     public Order getOrders(@PathVariable String id) {
         return shopService.getOrder(id);
     }
