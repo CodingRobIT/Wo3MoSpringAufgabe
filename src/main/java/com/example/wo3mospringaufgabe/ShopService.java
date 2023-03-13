@@ -1,9 +1,14 @@
 package com.example.wo3mospringaufgabe;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
+@RestController
+@RequestMapping("/shop")
 
 public class ShopService {
 

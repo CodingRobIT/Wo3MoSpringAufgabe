@@ -1,12 +1,15 @@
 package com.example.wo3mospringaufgabe;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
+
 
 class ShopServiceTest {
 
