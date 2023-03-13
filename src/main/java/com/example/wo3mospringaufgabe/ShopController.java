@@ -22,7 +22,7 @@ ShopService shopService= new ShopService();
     public List<Order> getOrders() {
         return shopService.listOrders();
     }
-
+// http:localhost:8080/api/orders/
     @GetMapping("/orders/{id}")
     public Order getOrders(@PathVariable String id) {
         return shopService.getOrder(id);
