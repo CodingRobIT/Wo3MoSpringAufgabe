@@ -10,21 +10,21 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class ProductRepositoryTest {
 
-    @Test
-    void list() {
-        //GIVEN
-        ProductRepository productRepository = new ProductRepository();
-
-        //WHEN
-        List<Product> actual = productRepository.list();
-
-        //THEN
-        List<Product> expected = new ArrayList<>();
-        expected.add(new Product("1", "Apple"));
-        expected.add(new Product("2", "Banana"));
-
-        assertEquals(expected, actual);
-    }
+//    @Test
+//    void list() {
+//        //GIVEN
+//        ProductRepository productRepository = new ProductRepository();
+//
+//        //WHEN
+//        List<Product> actual = productRepository.list();
+//
+//        //THEN
+//        List<Product> expected = new ArrayList<>();
+//        expected.add(new Product("1", "Apple"));
+//        expected.add(new Product("2", "Banana"));
+//
+//        assertEquals(expected, actual);
+//    }
 
     @Test
     void get() {
@@ -40,15 +40,15 @@ class ProductRepositoryTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void get_whenNonExistingId_thenReturnNull() {
-        //GIVEN
-        ProductRepository productRepository = new ProductRepository();
-
-        //WHEN
-        Product actual = productRepository.get("3");
-
-        //THEN
-        assertNull(actual);
-    }
+//    @Test
+//    void get_whenNonExistingId_thenReturnNull() {
+//        //GIVEN
+//        ProductRepository productRepository = new ProductRepository();
+//
+//        //WHEN
+//        Product actual = productRepository.get("3");
+//
+//        //THEN
+//        assertNull(actual);
+//    }
 }

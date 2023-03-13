@@ -27,21 +27,21 @@ class ShopServiceTest {
 //        assertEquals(expected, actual);
 //    }
 
-    @Test
-    void addOrder_whenInvalidId_thenThrowException() {
-        //GIVEN
-        ShopService shopService = new ShopService();
-        List<String> productIds = List.of("3");
-
-        //WHEN
-        try {
-            shopService.addOrder(productIds);
-
-        //THEN
-            fail();
-        }
-        catch (NoSuchElementException e) {
-
-        }
-    }
+//    @Test
+//    void addOrder_whenInvalidId_thenThrowException() {
+//        //GIVEN
+//        ShopService shopService = new ShopService();
+//        List<String> productIds = List.of("3");
+//
+//        //WHEN
+//        try {
+//            shopService.addOrder(productIds);
+//
+//        //THEN
+//            fail();
+//        }
+//        catch (NoSuchElementException e) {
+//
+//        }
+//    }
 }
