@@ -8,7 +8,6 @@ import java.util.NoSuchElementException;
 import java.util.UUID;
 
 
-
 public class ShopService {
 
     private ProductRepository productRepository;
@@ -23,16 +22,16 @@ public class ShopService {
         return productRepository.list();
     }
 
-    public void getProduct(String id) {
-        System.out.println(productRepository.get(id));
+    public Product getProduct(String id) {
+        return productRepository.get(id);
     }
 
-    public void listOrders() {
-        System.out.println(orderRepository.list());
+    public List<Order> listOrders() {
+        return orderRepository.list();
     }
 
-    public void getOrder(String id) {
-        System.out.println(orderRepository.get(id));
+    public Order getOrder(String id) {
+        return orderRepository.get(id);
     }
 
     public Order addOrder(List<String> productIds) {
