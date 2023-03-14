@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class OrderRepository {
 
-    private Map<String, Order> orders = new HashMap<>();
+    private final Map<String, Order> orders = new HashMap<>();
 
     public OrderRepository() {
 //        orders.put("1", new Order("1", List.of(new Product("1", "Apple"), new Product("2", "Banana"))));
@@ -20,9 +20,9 @@ public class OrderRepository {
 //        orders.put("4", new Order("4", List.of(new Product("7", "Erdbeere"), new Product("8", "Kaki"),new Product("9","Lychee"))));
     }
 
-    public OrderRepository(Map<String, Order> orders) {
-        this.orders = orders;
-    }
+//    public OrderRepository(Map<String, Order> orders) {
+//        this.orders = orders;
+//    }
 
     public List<Order> list() {
         return new ArrayList<>(orders.values());
