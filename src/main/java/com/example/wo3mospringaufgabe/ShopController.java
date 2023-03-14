@@ -6,7 +6,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ShopController {
-ShopService shopService= new ShopService();
+private final ShopService shopService;
+
+    public ShopController(ShopService shopService) {
+        this.shopService = shopService;
+    }
 
     @GetMapping("/products")                //localhost:8080/api/products
     public List<Product> getProducts() {
