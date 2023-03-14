@@ -34,7 +34,7 @@ class ShopServiceTest {
         when(orderRepository.add(new Order("randomID", List.of(new Product("451", "GameBoy")))))
                 .thenReturn(new Order("randomID", List.of(new Product("451", "GameBoy"))));
         when(idService.generateId())
-                .thenReturn("randomID"); //Natürlich kann man hier auch nur RandomID schreiben oder 1 oder 2 oder a um sich den stress zu erspahren mit der langen nummer/ID
+                .thenReturn("randomID"); //Natürlich kann man hier auch nur RandomID schreiben oder 1 oder 2 oder a um sich den stress zu ersparen mit der langen nummer/ID
 
         //WHEN
         Order actual1 = shopService.addOrder(productIds);
