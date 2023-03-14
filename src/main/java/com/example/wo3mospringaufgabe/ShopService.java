@@ -1,5 +1,6 @@
 package com.example.wo3mospringaufgabe;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
-
+@Service
 public class ShopService {
 
     private ProductRepository productRepository;
@@ -50,4 +51,7 @@ public class ShopService {
         Order order = new Order(UUID.randomUUID().toString(), allProducts);
         return orderRepository.add(order);
     }
+
+//    public Product addProduct(Product product) {
+//        return productRepository.;
 }

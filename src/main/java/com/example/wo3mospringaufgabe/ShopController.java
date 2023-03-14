@@ -3,10 +3,11 @@ package com.example.wo3mospringaufgabe;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class ShopController {
-ShopService shopService= new ShopService();
+    ShopService shopService = new ShopService();
 
     @GetMapping("/products")
     public List<Product> getProducts() {
@@ -22,14 +23,19 @@ ShopService shopService= new ShopService();
     public List<Order> getOrders() {
         return shopService.listOrders();
     }
-// http:localhost:8080/api/orders/
+
+    // http:localhost:8080/api/orders/
     @GetMapping("/orders/{id}")
     public Order getOrders(@PathVariable String id) {
         return shopService.getOrder(id);
     }
+
     @PostMapping
-    public void addOrder(@RequestBody List<String> productId){
+    public void addOrder(@RequestBody List<String> productId) {
         shopService.addOrder(productId);
 
+//        @PostMapping
+//        public Product addProduct (@RequestBody Product product){
+//            return shopService.addProduct(product);
     }
 }
