@@ -1,19 +1,23 @@
 package com.example.wo3mospringaufgabe;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+@Repository
 
 public class OrderRepository {
 
     private Map<String, Order> orders = new HashMap<>();
 
     public OrderRepository() {
-        orders.put("1", new Order("1", List.of(new Product("1", "Apple"), new Product("2", "Banana"))));
-        orders.put("2", new Order("2", List.of(new Product("3", "Dattel"), new Product("4", "Papaya"))));
-        orders.put("3", new Order("3", List.of(new Product("5", "Himbeere"), new Product("6", "Blaubeere"))));
-        orders.put("4", new Order("4", List.of(new Product("7", "Erdbeere"), new Product("8", "Kaki"),new Product("9","Lychee"))));
+//        orders.put("1", new Order("1", List.of(new Product("1", "Apple"), new Product("2", "Banana"))));
+//        orders.put("2", new Order("2", List.of(new Product("3", "Dattel"), new Product("4", "Papaya"))));
+//        orders.put("3", new Order("3", List.of(new Product("5", "Himbeere"), new Product("6", "Blaubeere"))));
+//        orders.put("4", new Order("4", List.of(new Product("7", "Erdbeere"), new Product("8", "Kaki"),new Product("9","Lychee"))));
     }
 
     public OrderRepository(Map<String, Order> orders) {

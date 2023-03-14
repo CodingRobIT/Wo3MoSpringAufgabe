@@ -1,7 +1,6 @@
 package com.example.wo3mospringaufgabe;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,11 +12,12 @@ import java.util.UUID;
 
 public class ShopService {
 
-    private ProductRepository productRepository;
-    private OrderRepository orderRepository;
+    private final ProductRepository productRepository;
+    private final OrderRepository orderRepository;
 
-    public ShopService(ProductRepository productRepository) {
+    public ShopService(ProductRepository productRepository, OrderRepository orderRepository) {
         this.productRepository = productRepository;
+        this.orderRepository = orderRepository;
     }
 
     public List<Product> listProducts() {

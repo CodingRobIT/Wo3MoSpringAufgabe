@@ -34,7 +34,8 @@ public class ShopController {
     public Order getOrders(@PathVariable String id) {
         return shopService.getOrder(id);
     }
-//    @PostMapping
+
+    //    @PostMapping
 //    public void addOrder(@RequestBody List<String> productId){
 //        shopService.addOrder(productId);
 //
