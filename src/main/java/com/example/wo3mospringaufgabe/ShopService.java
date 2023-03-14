@@ -44,7 +44,7 @@ public class ShopService {
             Product product = productRepository.get(productId);
 
             if (product == null) {
-                throw new NoSuchElementException("Product with Id: " + productId + " not found!");
+                 throw new NoSuchElementException("Product with Id: " + productId + " not found!");
             }
 
             allProducts.add(product);

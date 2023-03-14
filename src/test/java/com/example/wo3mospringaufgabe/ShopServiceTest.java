@@ -1,10 +1,12 @@
 package com.example.wo3mospringaufgabe;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.matchers.Or;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 import static org.assertj.core.api.FactoryBasedNavigableListAssert.assertThat;
@@ -56,7 +58,6 @@ class ShopServiceTest {
 
         List<String> productIds = List.of("3");
 
-
         //WHEN
         try {
             shopService.addOrder(productIds);
@@ -68,4 +69,42 @@ class ShopServiceTest {
         }
         verify(productRepository).get("3");
     }
+
+    @Test
+    void listProductTest() {
+        //GIVEN
+        when(productRepository.list())
+                .thenReturn(List.of(new Product("1", "Apple")));
+
+        //WHEN
+        List<Product> actual = shopService.listProducts();
+        List<Product> expected = List.of(new Product("1", "Apple"));
+
+
+        //THEN
+        verify(productRepository).list();
+        assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    void listOrderTest() {
+        //GIVEN
+        when(orderRepository.list())
+                .thenReturn(List.of(new Order("1", List.of(new Product("1", "Birnen")))));
+        //WHEN
+        List<Order> actual = shopService.listOrders();
+        List<Order> expected = List.of(new Order("1", List.of(new Product("1", "Birnen"))));
+        //THEN
+        verify(orderRepository).list();
+        assertEquals(expected, actual);
+
+    }
+
+
+
+
+
+
 }
