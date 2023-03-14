@@ -32,4 +32,10 @@ ShopService shopService= new ShopService();
         shopService.addOrder(productId);
 
     }
+
+//    von der Musterlösung______________________________________________
+//    @PostMapping("orders/")
+//    public Order addOrder(@RequestBody List<String> productIds) {
+//        return shopService.addOrder(productIds);  //Einziger Unterschied Matthias hat hier n return davor.
+//    }
 }
