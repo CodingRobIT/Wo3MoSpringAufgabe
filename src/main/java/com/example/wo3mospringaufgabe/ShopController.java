@@ -6,7 +6,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class ShopController {
-ShopService shopService= new ShopService();
+    private final ShopService shopService;
+
+    private final VendorService vendorService;
+
+    public ShopController(ShopService shopService, VendorService vendorService) {
+        this.shopService = shopService;
+        this.vendorService = vendorService;
+    }
 
     @GetMapping("/products")                //localhost:8080/api/products
     public List<Product> getProducts() {
@@ -27,15 +34,14 @@ ShopService shopService= new ShopService();
     public Order getOrders(@PathVariable String id) {
         return shopService.getOrder(id);
     }
-    @PostMapping
-    public void addOrder(@RequestBody List<String> productId){
-        shopService.addOrder(productId);
-
-    }
-
-//    von der Musterlösung______________________________________________
-//    @PostMapping("orders/")
-//    public Order addOrder(@RequestBody List<String> productIds) {
-//        return shopService.addOrder(productIds);  //Einziger Unterschied Matthias hat hier n return davor.
+//    @PostMapping
+//    public void addOrder(@RequestBody List<String> productId){
+//        shopService.addOrder(productId);
+//
 //    }
+
+    @PostMapping
+    public Product addProduct(@RequestBody Product product) {
+        return vendorService.addProduct(product);
+    }
 }
