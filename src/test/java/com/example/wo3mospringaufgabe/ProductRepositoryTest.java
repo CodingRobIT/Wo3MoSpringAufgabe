@@ -7,10 +7,16 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.mock;
 
 class ProductRepositoryTest {
 
-//    @Test
+//    OrderRepository orderRepository = mock(OrderRepository.class);
+//    ShopService shopService = mock(ShopService.class);
+//    IdService idService = mock(IdService.class);
+//    ProductRepository productRepository = new ShopService(shopService, orderRepository, idService);
+
+  //@Test
 //    void list() {
 //        //GIVEN
 //        ProductRepository productRepository = new ProductRepository();

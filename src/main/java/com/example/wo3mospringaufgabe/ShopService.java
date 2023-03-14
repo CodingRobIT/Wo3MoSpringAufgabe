@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.UUID;
 
 @Service
 
@@ -14,10 +13,12 @@ public class ShopService {
 
     private final ProductRepository productRepository;
     private final OrderRepository orderRepository;
+    private final IdService idService;
 
-    public ShopService(ProductRepository productRepository, OrderRepository orderRepository) {
+    public ShopService(ProductRepository productRepository, OrderRepository orderRepository, IdService idService) {
         this.productRepository = productRepository;
         this.orderRepository = orderRepository;
+        this.idService = idService;
     }
 
     public List<Product> listProducts() {
@@ -49,7 +50,11 @@ public class ShopService {
             allProducts.add(product);
         }
 
-        Order order = new Order(UUID.randomUUID().toString(), allProducts);
-        return orderRepository.add(order);
+        Order order = new Order(idService.generateId(), allProducts); //Hier wird wie unten eine UUID zufällig generiert
+        return orderRepository.add(order);                             //Allerdings in der Klasse IdService mit der Methode idService
+
+        //Alte Methode schlecht zum testen da ID ja generiert wird
+//        Order order = new Order(UUID.randomUUID().toString(), allProducts);
+//        return orderRepository.add(order);
     }
 }
