@@ -44,5 +44,9 @@ public class ProductRepository {
         return product;
     }
 
-
+            //Später Fertig machen
+//    public void add(Product product) {
+//        product.put(product.id(), product);
+//        return product;
+//    }
 }
