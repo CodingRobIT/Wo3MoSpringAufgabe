@@ -95,7 +95,6 @@ class ShopIntegrationsTest {
 
 
 
-±±±|
   /*  @Test
     // @DirtiesContext = Putzkraft => Wenn du etwas eingefügt hast ins Repo, lösche es danach wieder!
     @DirtiesContext
