@@ -8,13 +8,17 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 class ProductRepositoryTest {
 
-//    OrderRepository orderRepository = mock(OrderRepository.class);
-//    ShopService shopService = mock(ShopService.class);
-//    IdService idService = mock(IdService.class);
-//    ProductRepository productRepository = new ShopService(shopService, orderRepository, idService);
+    OrderRepository orderRepository = mock(OrderRepository.class);
+    ShopService shopService = mock(ShopService.class);
+    IdService idService = mock(IdService.class);
+    ProductRepository productRepository = mock(ProductRepository.class);
+
+
+
 
   //@Test
 //    void list() {

@@ -25,7 +25,7 @@ class ShopServiceTest {
     ShopService shopService = new ShopService(productRepository, orderRepository, idService); //wird nicht gemockt da wir sonst den ShopService nicht testen können
 
     @Test
-    void addOrder() {
+    void addOrderTest() {
         //GIVEN
         //ShopService shopService = new ShopService(); Wird jetzt nicht mehr genutz da wir Mocks dafür nutzen
         List<String> productIds = List.of("124");
@@ -88,6 +88,8 @@ class ShopServiceTest {
 
     }
 
+
+
     @Test
     void listOrderTest() {
         //GIVEN
@@ -101,10 +103,4 @@ class ShopServiceTest {
         assertEquals(expected, actual);
 
     }
-
-
-
-
-
-
 }
