@@ -57,4 +57,13 @@ public class ShopService {
 //        Order order = new Order(UUID.randomUUID().toString(), allProducts);
 //        return orderRepository.add(order);
     }
+
+    public void deleteOrder(String id) {
+        orderRepository.deleteOrder(id);
+    }
+
+
+    public void putOrder(Order order) {
+        orderRepository.putOrder(order);
+    }
 }

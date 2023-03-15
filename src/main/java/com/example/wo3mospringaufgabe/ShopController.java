@@ -1,5 +1,7 @@
 package com.example.wo3mospringaufgabe;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,5 +46,16 @@ public class ShopController {
     @PostMapping
     public Product addProduct(@RequestBody Product product) {
         return vendorService.addProduct(product);
+    }
+
+    @DeleteMapping("/orders/{id}")
+    public ResponseEntity deleteOrder(@PathVariable String id) {
+        shopService.deleteOrder(id);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/orders")
+    public void putOrder(@RequestBody Order order) {
+        shopService.putOrder(order);
     }
 }
