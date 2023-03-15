@@ -38,7 +38,7 @@ public class ProductRepository {
     }
 
     public Product save(Product product) {
-        products.put(product.getId(), product);
+        products.put(product.id(), product);  //version wenn Product eine class ist und kein rekord>>> products.put(product.getId(), product);
         return product;
     }
 
