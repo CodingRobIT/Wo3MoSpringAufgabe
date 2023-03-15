@@ -1,5 +1,6 @@
 package com.example.wo3mospringaufgabe;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -7,12 +8,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 @Repository
+@RequiredArgsConstructor
 
 public class ProductRepository {
 
     private final Map<String, Product> products = new HashMap<>();
 
-    public ProductRepository() {
+ //   public ProductRepository() { //ist wegen Lombok jetzt nicht nötig
 //        products = new HashMap<>();
 //       products.put("1", new Product("1", "Apple"));
 //        products.put("2", new Product("2", "Banana"));
@@ -23,7 +25,7 @@ public class ProductRepository {
 //        products.put("7", new Product("7", "Erdbeere"));
 //        products.put("8", new Product("8", "Kaki"));
 //        products.put("9", new Product("9", "Lychee"));
-   }
+ // }
 
 //    public ProductRepository(Map<String, Product>)  {
 //        //this.products = products;
