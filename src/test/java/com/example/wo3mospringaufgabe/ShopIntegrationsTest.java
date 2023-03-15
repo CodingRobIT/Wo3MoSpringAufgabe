@@ -58,6 +58,27 @@ class ShopIntegrationsTest {
                                 []
                                 """));
     }
+
+    @Test
+    @DirtiesContext
+    void testGetAllProducts_shouldReturnOneProduct_whenRepositoryHasOneProduct() throws Exception {
+        Product product = new Product("L0815", "Löffel");
+        productRepository.save(product);  //in Sergj seinem beispiel steht hier productRepository.add(product);
+
+        mockMvc.perform(get("/api/products"))
+                .andExpect(status().isOk())
+                .andExpect(content().json(  """
+                                [
+                                   {
+                                    "id": "L0815",
+                                    "name": "Löffel"
+                                  }
+                                ]
+                                """));
+    }
+
+
+
     @Test
     @DirtiesContext
     void addProduct_shouldReturnCreatedProduct() throws Exception {
@@ -101,7 +122,7 @@ class ShopIntegrationsTest {
     void getAllProducts_shouldReturnListWithOneProduct_whenRepositoryHasOneProduct() throws Exception {
         // Wie kriegen wir etwas ins Repo?
         // zB per POST .. oder?
-        // einfach direkt mit einem Repositoryaufruf!
+        // einfach direkt mit einem Repository aufruf!
         Product product = new Product("Georgischer Rotwein", "1");
         productRepository.add(product);
 
