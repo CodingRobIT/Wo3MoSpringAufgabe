@@ -16,6 +16,8 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -67,16 +69,15 @@ class ShopIntegrationsTest {
 
         mockMvc.perform(get("/api/products"))
                 .andExpect(status().isOk())
-                .andExpect(content().json(  """
-                                [
-                                   {
-                                    "id": "L0815",
-                                    "name": "Löffel"
-                                  }
-                                ]
-                                """));
+                .andExpect(content().json("""
+                        [
+                           {
+                            "id": "L0815",
+                            "name": "Löffel"
+                          }
+                        ]
+                        """));
     }
-
 
 
     @Test
@@ -155,23 +156,21 @@ class ShopIntegrationsTest {
                         """));
     }
 
-//    @Test
-//    void getOrders() {
-//
-//
-//    @Test
-//    void testGetOrders() {
-//    }
-//
-//    @Test
-//    void addProduct() {
-//    }
-//
-//    @Test
-//    void deleteOrder() {
-//    }
-//
-//    @Test
-//    void putOrder() {
-//    }
+  /*  @Test
+    @DirtiesContext
+    void testGetAllOrder_shouldReturnOneOrder_whenOrderRepositoryHasOneOrder() throws Exception {
+
+        Order order = new Order("B2", null);
+
+        mockMvc.perform(get("/api/orders"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+                        [
+                           {
+                             "id": "B2"
+                          }
+                        ]
+                        """));
+    } */
+
 }
