@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.awt.*;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -156,11 +157,11 @@ class ShopIntegrationsTest {
                         """));
     }
 
-  /*  @Test
+   /* @Test
     @DirtiesContext
     void testGetAllOrder_shouldReturnOneOrder_whenOrderRepositoryHasOneOrder() throws Exception {
 
-        Order order = new Order("B2", null);
+        Order order = new Order("B2", List.of(new Product("K8", "Klobürste")));
 
         mockMvc.perform(get("/api/orders"))
                 .andExpect(status().isOk())
