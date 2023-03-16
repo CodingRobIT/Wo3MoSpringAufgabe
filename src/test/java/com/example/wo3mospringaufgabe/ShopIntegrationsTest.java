@@ -157,7 +157,7 @@ class ShopIntegrationsTest {
                         """));
     }
 
-   /* @Test
+ /*   @Test
     @DirtiesContext
     void testGetAllOrder_shouldReturnOneOrder_whenOrderRepositoryHasOneOrder() throws Exception {
 
@@ -166,12 +166,18 @@ class ShopIntegrationsTest {
         mockMvc.perform(get("/api/orders"))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
-                        [
-                           {
-                             "id": "B2"
-                          }
+                                                [
+                            {
+                                "id": "B2",
+                                "products": [
+                                    {
+                                        "id": "K8",
+                                        "name": "Klobürste"
+                                    }
+                                ]
+                            }
                         ]
-                        """));
+                                                """));
     } */
 
 }
