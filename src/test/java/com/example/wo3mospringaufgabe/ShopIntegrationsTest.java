@@ -144,7 +144,7 @@ class ShopIntegrationsTest {
 
     @Autowired
     OrderRepository orderRepository;
-    Order order;
+    //Order order;
 
     @Test
     @DirtiesContext
